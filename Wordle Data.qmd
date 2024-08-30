@@ -1,0 +1,29 @@
+---
+title: "Wordle Data"
+format: html
+editor: visual
+author: "Kai and Sam"
+---
+
+
+## Libraries
+```{r}
+library(tidyverse)
+library(readxl)
+library(ggplot2)
+```
+
+
+## Reading in Data
+```{r}
+wordle_data <- read_xlsx("~/Summer-Internship--24/Wordle Game - Survey (Responses) _Redacted.xlsx")
+```
+
+
+## Making New Data Frame
+```{r}
+wordle_results <- wordle_data %>%
+  rename(Results = "Paste game results here") %>%
+  select(Results)
+```
+
