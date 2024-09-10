@@ -1,6 +1,7 @@
 library(readxl)
 library(tidyverse)
 library(writexl)
+library(openxlsx)
 
 wordledata <- read_excel("~/Documents/Wordle Game - Survey (Responses) _Redacted.xlsx")
 View(wordledata)
@@ -47,12 +48,8 @@ wordleclean <- wordlesep3 %>%
          Duration = Column9,
          Sequence.num = Column10,
          Guesses = Column11)
-view(wordleclean) 
 
+view(wordleclean)
 
-### example: 
-### whale <- whale |>
-### mutate(cruise = substr(cruise, 2, nchar(cruise)))
-### shortening the column "cruise"'s entries, keeping the info starting at the second 
-###    character and stopping at the length of the entry
-
+# write.csv(wordleclean,"~/Documents/summer-2024-project/wordleclean.csv", row.names = TRUE)
+# write.xlsx(wordleclean,"~/Documents/summer-2024-project/wordleclean.xlsx", rowNames = TRUE)
