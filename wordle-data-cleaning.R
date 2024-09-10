@@ -3,7 +3,7 @@ library(tidyverse)
 library(writexl)
 library(openxlsx)
 
-wordledata <- read_excel("~/Documents/Wordle Game - Survey (Responses) _Redacted.xlsx")
+wordledata <- read_xlsx("~/Documents/Summer-Internship--24/Wordle Game - Survey (Responses) _Redacted.xlsx")
 View(wordledata)
 
 wordledata <- wordledata %>%
