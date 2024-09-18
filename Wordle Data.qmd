@@ -80,3 +80,14 @@ wordleclean <- wordlesep3 %>%
 view(wordleclean)
 ```
 
+## New Guesses Dataset
+```{r}
+wordle_flipped <- wordleclean %>%
+  mutate(Guesses = str_remove_all(Guesses, "\\[|\\]")) %>%
+  separate_rows(Guesses, sep = ",") %>%
+  rename(Guess = Guesses) %>%
+  select(ID, Word, Guess, UserID) %>%
+  group_by(UserID) %>%
+  mutate(Attempt = row_number())
+```
+
